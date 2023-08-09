@@ -1,0 +1,15 @@
+A component consists of three things:
+- A component class the handles data and functionality
+- An HTML template that determines the UI
+- Component-specific styles that define the look and feel
+
+Structural directives:
+*ngFor,
+*ngIf
+
+Angular's interpolation syntax. {{ object.field }}
+Interpolation {{ }} lets you render the property value as text.
+
+Property binding [ ] syntax uses a set of brackets
+Event binding ( ) syntax uses a set of parentheses
+
