@@ -13,3 +13,9 @@ Interpolation {{ }} lets you render the property value as text.
 Property binding [ ] syntax uses a set of brackets
 Event binding ( ) syntax uses a set of parentheses
 
+The @Component() decorator indicates that a class is a component.
+@Component() also provides metadata about the component,
+including its selector, templates, and styles.
+
+The @Input() decorator indicates that the property value
+passes in from the component's parent
