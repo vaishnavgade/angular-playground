@@ -19,3 +19,7 @@ including its selector, templates, and styles.
 
 The @Input() decorator indicates that the property value
 passes in from the component's parent
+
+The @Output() decorator marks a class field as an output property 
+and supplies configuration metadata. The DOM property bound to the
+output property is automatically updated during change detection.
