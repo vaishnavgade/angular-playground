@@ -23,3 +23,8 @@ passes in from the component's parent
 The @Output() decorator marks a class field as an output property 
 and supplies configuration metadata. The DOM property bound to the
 output property is automatically updated during change detection.
+
+The RouterLink directive helps you customize the anchor element. 
+
+The currency pipe to transform product.price from a number to a currency string.
+A pipe is a way you can transform data in your HTML template.
