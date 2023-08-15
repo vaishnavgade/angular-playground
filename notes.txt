@@ -28,3 +28,6 @@ The RouterLink directive helps you customize the anchor element.
 
 The currency pipe to transform product.price from a number to a currency string.
 A pipe is a way you can transform data in your HTML template.
+
+In Angular, a service is an instance of a class that you can make available 
+to any part of your application using Angular's dependency injection system.
