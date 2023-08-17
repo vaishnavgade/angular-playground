@@ -31,3 +31,13 @@ A pipe is a way you can transform data in your HTML template.
 
 In Angular, a service is an instance of a class that you can make available 
 to any part of your application using Angular's dependency injection system.
+
+Angular HttpClient is a built-in way to fetch data from external APIs
+and provide them to your application as a stream.
+To use Angular's HttpClient, you must configure your application to use HttpClientModule.
+Angular's HttpClientModule registers the providers your application needs to use 
+the HttpClient service throughout your application.
+
+The async pipe returns the latest value from a stream of data 
+and continues to do so for the life of a given component.
+When Angular destroys that component, the async pipe automatically stops.
