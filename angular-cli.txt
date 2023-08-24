@@ -1,0 +1,28 @@
+Create new Angular project:
+    ng new <app-name> (This will also create a new dir <app-name>)
+    ng new <app-name> --directory ./ (This is easier when you already have a git repo)
+
+Builds and serves your application, rebuilding on file changes:
+    ng serve
+    ng serve --open
+    The --open (or just -o) option automatically opens your browser to http://localhost:4200/
+    ng serve --port 4201 if port 4200 is not available
+
+Generates or modifies files based on a schematic:
+    ng generate
+    ng generate component <component-name>
+
+Runs unit tests on a given project:
+    ng test
+
+Builds and serves an Angular application, then runs end-to-end tests:
+    ng e2e
+
+Add a npm package
+    ng add @angular/material
+    ng add @angular/pwa
+
+Compiles an Angular application into an output directory:
+This is to build for Production
+    ng build
+Copy the contents of the dist/my-project-name folder to your web server for hosting the app.

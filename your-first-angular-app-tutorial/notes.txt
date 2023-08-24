@@ -41,3 +41,7 @@ the HttpClient service throughout your application.
 The async pipe returns the latest value from a stream of data 
 and continues to do so for the life of a given component.
 When Angular destroys that component, the async pipe automatically stops.
+
+If the default port 4200 is not available, 
+you can specify another port with the port flag as in the following example:
+ng serve --port 4201
