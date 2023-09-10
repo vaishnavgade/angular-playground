@@ -24,3 +24,12 @@ Add FormsModule to the imports array in @NgModule.
 The imports array contains the list of external modules that the application needs.
 
 Every component must be declared in exactly one NgModule.
+
+(click) is Angular's event binding syntax.
+The parentheses around click tell Angular to listen for the <button> element's click event.
+When the user clicks in the <button>, Angular executes the onSelect(hero) expression.
+
+The *ngIf directive tells Angular to render the section only when the condition is satisfied.
+
+Angular's class binding can add and remove a CSS class conditionally.
+Add [class.some-css-class]="some-condition" to the element you want to style.
