@@ -33,3 +33,26 @@ The *ngIf directive tells Angular to render the section only when the condition 
 
 Angular's class binding can add and remove a CSS class conditionally.
 Add [class.some-css-class]="some-condition" to the element you want to style.
+
+Components shouldn't fetch or save data directly, and they certainly shouldn't knowingly 
+present fake data. They should focus on presenting data and delegate data access to a service.
+
+If the Angular "Injectable" symbol annotates a class with the @Injectable() decorator,
+then this marks the class as one that participates in the dependency injection system.
+The class is going to provide an injectable service, and it can also have its own injected dependencies.
+
+The @Injectable() decorator accepts a metadata object for the service, the same way 
+the @Component() decorator did for your component classes.
+
+Provider scope for now is in "root". For futher reading :
+https://angular.io/tutorial/tour-of-heroes/toh-pt4#provide-the-heroservice
+https://angular.io/guide/dependency-injection
+https://angular.io/guide/providers
+
+Reserve the constructor for minimal initialization such as wiring constructor parameters
+to properties. The constructor shouldn't do anything. 
+It certainly shouldn't call a function that makes HTTP requests 
+to a remote server as a real data service would.
+
+When you want to use services in a template, you should set it to public in constructor.
+Angular only binds to public component properties.
