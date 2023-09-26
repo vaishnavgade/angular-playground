@@ -56,3 +56,21 @@ to a remote server as a real data service would.
 
 When you want to use services in a template, you should set it to public in constructor.
 Angular only binds to public component properties.
+
+The <router-outlet> tells the router where to display routed views.
+The RouterOutlet is one of the router directives that became available to the AppComponent
+because AppModule imports AppRoutingModule which exported RouterModule. 
+The ng generate command you ran at the start of this tutorial added this import because of
+the --module=app flag. 
+
+If you didn't use the ng generate command to create app-routing.module.ts,
+import AppRoutingModule into app.module.ts and add it to the imports array of the NgModule.
+
+A routerLink attribute is set to "/heroes", the string that the router matches to the route
+to HeroesComponent. The routerLink is the selector for the RouterLink directive that turns
+user clicks into router navigations. It's another of the public directives in the RouterModule.
+
+// this.route.snapshot.paramMap.get('id')
+The route.snapshot is a static image of the route information shortly after the component was created.
+The paramMap is a dictionary of route parameter values extracted from the URL. 
+The "id" key returns the id of the hero to fetch.

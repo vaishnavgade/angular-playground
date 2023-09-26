@@ -11,6 +11,10 @@ Builds and serves your application, rebuilding on file changes:
 Generates or modifies files based on a schematic:
     ng generate
     ng generate component <component-name>
+    ng generate service <service-name>
+    ng generate module <module-name> --flat --module=app
+        --flat  Puts the file in src/app instead of its own directory.
+        --module=app  Tells ng generate to register it in the imports array of the AppModule.
 
 Runs unit tests on a given project:
     ng test
