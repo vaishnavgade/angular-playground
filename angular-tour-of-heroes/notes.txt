@@ -74,3 +74,46 @@ user clicks into router navigations. It's another of the public directives in th
 The route.snapshot is a static image of the route information shortly after the component was created.
 The paramMap is a dictionary of route parameter values extracted from the URL. 
 The "id" key returns the id of the hero to fetch.
+
+Mimic communication with a remote data server by using the In-memory Web API module.
+After installing the module, the application makes requests to and receive responses 
+from the HttpClient. The application doesn't know that the In-memory Web API is intercepting
+those requests, applying them to an in-memory data store, and returning simulated responses.
+
+By using the In-memory Web API, you won't have to set up a server to learn about HttpClient.
+npm install angular-in-memory-web-api --save
+
+The forRoot() configuration method takes an InMemoryDataService class that primes the in-memory database.
+After the server is ready, detach the In-memory Web API so the application's requests can go through to the server.
+
+Define the heroesUrl of the form :base/:collectionName with the address of the heroes
+resource on the server. Here base is the resource to which requests are made,
+and collectionName is the heroes data object in the in-memory-data-service.ts.
+
+All HttpClient methods return an RxJS Observable of something.
+HTTP is a request/response protocol. You make a request, it returns a single response.
+In general, an observable can return more than one value over time. 
+An observable from HttpClient always emits a single value and then completes, never to emit again.
+This particular call to HttpClient.get() returns an Observable<Hero[]>, 
+which is an observable of hero arrays. In practice, it only returns a single hero array.
+
+To catch errors, you "pipe" the observable result from http.get() through an RxJS catchError() operator.
+
+After reporting the error to the console, the handler constructs a friendly message and returns a safe value so the application can keep working.
+Because each service method returns a different kind of Observable result,
+handleError() takes a type parameter to return the safe value as the type that the application expects.
+
+The RxJS tap() operator enables this ability by looking at the observable values, doing something with those values, and passing them along. 
+The tap() callback doesn't access the values themselves.
+
+If you neglect to subscribe(), the service can't send the delete request to the server.
+As a rule, an Observable does nothing until something subscribes.
+
+AsyncPipe
+The *ngFor repeats hero objects. Notice that the *ngFor iterates over a list called heroes$, not heroes. 
+The $ is a convention that indicates heroes$ is an Observable, not an array.
+<li *ngFor="let hero of heroes$ | async" >
+
+A Subject is both a source of observable values and an Observable itself.
+You can subscribe to a Subject as you would any Observable.
+You can also push values into that Observable by calling its next(value) method as the search() method does.
